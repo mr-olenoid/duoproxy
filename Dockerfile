@@ -10,4 +10,4 @@ RUN cd duoauthproxy-*-src/duoauthproxy-build && ./install --install-dir=/opt/duo
 RUN apt-get purge build-essential libffi-dev perl zlib1g-dev wget -y
 RUN apt-get clean -y
 RUN rm -rf /scr/douproxy
-CMD service duoauthproxy start && tail -F /opt/duoauthproxy/log/authevents.log
+CMD /opt/duoauthproxy/bin/authproxy
