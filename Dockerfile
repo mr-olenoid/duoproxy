@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM ubuntu:latest
 WORKDIR /scr/douproxy
 RUN apt-get update -y
 RUN apt-get upgrade -y
@@ -10,4 +10,4 @@ RUN cd duoauthproxy-*-src/duoauthproxy-build && ./install --install-dir=/opt/duo
 RUN apt-get purge build-essential libffi-dev perl zlib1g-dev wget -y
 RUN apt-get clean -y
 RUN rm -rf /scr/douproxy
-CMD /opt/duoauthproxy/bin/authproxy
+CMD /opt/duoauthproxy/bin/authproxyctl start
