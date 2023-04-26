@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 WORKDIR /scr/douproxy
 RUN apt-get update -y
 RUN apt-get upgrade -y
